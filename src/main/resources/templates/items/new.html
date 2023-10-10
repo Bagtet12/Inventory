@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Item Baru</title>
+  </head>
+
+  <body>
+    <h1>Form Item Baru</h1>
+    <form action="/items/save" method="post">
+      <!-- Nama Barang -->
+      <label for="namaBarang">Nama Barang:</label>
+      <input
+        type="text"
+        id="namaBarang"
+        name="namaBarang"
+        required
+      /><br /><br />
+
+      <!-- Deskripsi -->
+      <label for="deskripsi">Deskripsi:</label>
+      <textarea id="deskripsi" name="deskripsi" required></textarea><br /><br />
+
+      <!-- Stok -->
+      <label for="stok">Stok:</label>
+      <input type="number" id="stok" name="stok" required /><br /><br />
+
+      <!-- Harga -->
+      <label for="harga">Harga:</label>
+      <input
+        type="number"
+        id="harga"
+        name="totalHarga"
+        step="0.01"
+        required
+      /><br /><br />
+
+      <!-- Kategori Dropdown -->
+      <label for="kategori">Kategori:</label>
+      <select id="kategori" name="categoryId" required>
+        <!-- Mengisi dropdown dengan data dari model Category -->
+        <option
+          th:each="category : ${category}"
+          th:value="${category.id}"
+          th:text="${category.kategori}"
+        ></option></select
+      ><br /><br />
+
+      <!-- Tombol Simpan -->
+      <button type="submit">Simpan</button>
+    </form>
+  </body>
+</html>

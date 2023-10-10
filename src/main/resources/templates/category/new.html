@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Kategori Baru</title>
+</head>
+
+<body>
+    <h1>Form Kategori Baru</h1>
+    <form action="/category/save" method="post">
+        <!-- Kategori -->
+        <label for="kategori">Kategori:</label>
+        <input type="text" id="kategori" name="kategori" required><br><br>
+
+        <!-- Nomor Seri -->
+        <label for="nomorSeri">Nomor Seri:</label>
+        <input type="text" id="nomorSeri" name="nomorSeri" required><br><br>
+
+        <!-- Tombol Simpan -->
+        <button type="submit">Simpan</button>
+    </form>
+</body>
+
+</html>
